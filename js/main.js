@@ -76,6 +76,9 @@ var Breakout = new Phaser.Class({
 
     this.startButton.on('pointerup', this.startGame, this);
 
+    // Configure key for Space
+    this.spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+
     // show score
     this.scoreText = this.add.text(
       5,
@@ -94,9 +97,9 @@ var Breakout = new Phaser.Class({
     });
 
     this.lifeLostText = this.add.text(
-      300,
+      250,
       400,
-      'Life lost, click to continue',
+      'Life lost, click or press space to continue',
       {
         font: '18px Arial',
         fill: '#FFFFFF',
@@ -203,7 +206,7 @@ var Breakout = new Phaser.Class({
       this.playing = true;
       this.ball.setVelocity(-75, -300);
       this.ball.setData('onPaddle', false);
-      this.lifeLostText.setText('Life lost, click to continue');
+      this.lifeLostText.setText('Life lost, click or press space to continue');
       this.lifeLostText.visible = false;
     }
   },
@@ -280,6 +283,11 @@ var Breakout = new Phaser.Class({
   },
 
   update: function () {
+    // Detect pressing of space key
+    if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
+      this.startGame();
+    }
+
     // keywords move
     if (this.cursors.left.isDown) {
       this.paddle.x = Phaser.Math.Clamp(this.paddle.x - 10, 52, 748);
