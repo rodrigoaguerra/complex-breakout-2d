@@ -24,20 +24,20 @@ O game proporciona uma experiência envolvente, combinando gráficos dinâmicos,
 ### Instalação
 Para rodar o projeto localmente:
 1. Clone o repositório:
-´´´bash
+```javascript
 git clone https://github.com/rodrigoaguerra/complex-breakout-2d.git
-´´´
+```
 2. Navegue até o diretório do projeto:
-´´´bash
+```bash
 cd complex-breakout-2d
-´´´
+```
 3. Inicie um servidor local:
-´´´bash
+```bash
 npx http-server .
-´´´
+```
 
 ### Capturas de Tela
-![Captura de tela breakout](./imagens/captura-breakout.png)
+![Captura de tela breakout](./images/captura-breakout.png)
 
 
 ### Contribuição
@@ -46,3 +46,5 @@ npx http-server .
 3. Envie um Pull Request.
 
 ### Link do Projeto
+
+[Acesse o Jogo Por Aqui](https://rodrigoaguerra.github.io/complex-breakout-2d/)
